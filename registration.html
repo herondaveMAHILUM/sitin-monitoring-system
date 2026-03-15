@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!----------------------- Bootstrap Link ---------------------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body style="padding-top: 225px; background-color:#b6d4fe;">
+
+    <nav class="navbar shadow-lg fixed-top bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand text-primary" href="#">
+            <img src="assets/uclogo.png" alt="Logo" width="49" height="31" class="d-inline-block align-text-top">
+            College of Computer Studies Sit-in Monitoring System
+            </a>
+            <div class="role-logged-out" id="nav-links">
+                <ul class="nav nav-pills justify-content-end" >
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registration.html">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container p-5 rounded-4 shadow-lg border col-12 col-md-6 col-lg-4 bg-white">
+        <h3 class="mb-4">Register</h3>
+        <label for="formGroupExampleInput" class="form-label">ID Number</label>
+        <input type="number" class="form-control mb-4" id="idNumber">
+        <label for="formGroupExampleInput" class="form-label">Last Name</label>
+        <input type="text" class="form-control mb-4" id="lastName">
+        <label for="formGroupExampleInput" class="form-label">First Name</label>
+        <input type="text" class="form-control mb-4" id="firstName">   
+        <label for="formGroupExampleInput" class="form-label">Middle Name</label>
+        <input type="text" class="form-control mb-4" id="middleName">
+        <label for="formGroupExampleInput2" class="form-label">Course Level</label>
+        <select class="form-control mb-5" id="courseLevel">
+            <option value="">Select Course Level</option>
+            <option value="BSIT">1</option>
+            <option value="BSCS">2</option>
+            <option value="BSIT">3</option>
+            <option value="BSCS">4</option>
+        </select>
+        <label for="formGroupExampleInput2" class="form-label">Password</label>
+        <input type="password" class="form-control mb-4" id="password">
+        <label for="formGroupExampleInput2" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control mb-5" id="confirmPassword">
+        <label for="formGroupExampleInput2" class="form-label">Email</label>
+        <input type="email" class="form-control mb-5" id="email">
+        <label for="formGroupExampleInput2" class="form-label">Course</label>
+        <select class="form-control mb-5" id="course">
+            <option value="">Select Course</option>
+            <option value="BSIT">BSIT</option>
+            <option value="BSCS">BSCS</option>
+        </select>
+        <label for="formGroupExampleInput2" class="form-label">Address</label>
+        <input type="password" class="form-control mb-5" id="address">
+        <button type="button" class="btn btn-success btn">Sign Up</button>
+        <button type="button" class="btn btn-secondary btn" onclick="window.location.href='index.html'">Cancel</button>
+    </div>
+    
+    <div class="position-fixed start-50 translate-middle-x p-3" style="top: 50px; z-index: 11;">
+    <div id="liveToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+        <div class="toast-body" id="toastBody">
+            Toast message
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    </div>
+
+    <!----------------------- Java Script Link  ---------------------------->
+    <script src="script.js"></script>
+</body>
+</html>
