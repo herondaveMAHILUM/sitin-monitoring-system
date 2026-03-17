@@ -18,13 +18,13 @@
                         <a class="nav-link" href="">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Search</a>
+                        <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#searchBar">Search</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Students</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Sit-in</a>
+                        <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#sitinForm">Sit-in</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">View Sit-in Records</a>
@@ -44,10 +44,29 @@
         </div>
     </nav>
 
+    <!----- Search Bar ----->
+    <div class="modal fade" id="searchBar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Search Students</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search..." aria-label="Search input with button">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container-fluid mt-5 pt-5 px-5">
         <div class="row row-cols-1 row-cols-md-2 g-4">
 
-            <!-- Total Students -->
             <div class="col-lg-6">
             <div class="card h-100 shadow">
                 <div class="card-header text-bg-primary">Statistics</div>
@@ -59,7 +78,6 @@
             </div>
             </div>
 
-            <!-- Active Sit-ins -->
             <div class="col-lg-6">
             <div class="card h-100 shadow">
                 <div class="card-header text-bg-primary">Announcement</div>
@@ -70,5 +88,7 @@
             </div>
         </div>
     </div>
+
+
 </body>
 </html>
