@@ -12,39 +12,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $stmt = $conn->prepare("SELECT password, role FROM users WHERE email = ?");
-    if (!$stmt) {
-        echo json_encode(["status" => "error", "message" => "Prepare failed: " . $conn->error]);
-        exit;
-    }
-
+    $stmt = $conn->prepare("SELECT id_number, last_name, first_name, middle_name, course_level, course, email, address, password, role FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
 
-    if ($stmt->num_rows == 0) {
+    if ($stmt->num_rows === 0) {
         echo json_encode(["status" => "error", "message" => "User not found"]);
         exit;
     }
 
-    $stmt->bind_result($dbPassword, $role);
+    $stmt->bind_result($idNumber, $lastName, $firstName, $middleName, $courseLevel, $course, $dbEmail, $address, $dbPassword, $role);
     $stmt->fetch();
-
-    // Check if password is already hashed
-    if (substr($dbPassword, 0, 4) !== '$2y$') {
-        // It's plain text → hash it and update DB
-        $hashedPassword = password_hash($dbPassword, PASSWORD_DEFAULT);
-        $update = $conn->prepare("UPDATE users SET password = ? WHERE email = ?");
-        $update->bind_param("ss", $hashedPassword, $email);
-        $update->execute();
-        $dbPassword = $hashedPassword; // replace plain text with hashed version
-    }
 
     if (password_verify($password, $dbPassword)) {
         echo json_encode([
             "status" => "success",
             "message" => "Login successful",
-            "role" => $role
+            "role" => $role,
+            "user" => [
+                "idNumber" => $idNumber,
+                "lastName" => $lastName,
+                "firstName" => $firstName,
+                "middleName" => $middleName,
+                "courseLevel" => $courseLevel,
+                "course" => $course,
+                "email" => $dbEmail,
+                "address" => $address
+            ]
         ]);
     } else {
         echo json_encode(["status" => "error", "message" => "Incorrect password"]);

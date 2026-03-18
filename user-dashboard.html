@@ -77,5 +77,22 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const user = JSON.parse(localStorage.getItem("userData"));
+            if (!user) {
+                // if no user data, redirect to login
+                window.location.href = "login.html";
+                return;
+            }
+
+            document.getElementById("studentName").textContent = `${user.firstName} ${user.middleName} ${user.lastName}`;
+            document.getElementById("studentCourse").textContent = user.course;
+            document.getElementById("studentYear").textContent = user.courseLevel;
+            document.getElementById("studentEmail").textContent = user.email;
+            document.getElementById("studentAddress").textContent = user.address;
+            document.getElementById("studentSessions").textContent = "0"; // placeholder
+        });
+    </script>
 </body>
 </html>

@@ -62,7 +62,6 @@
 
         if (loginBtn) {
             loginBtn.addEventListener("click", function () {
-
                 const email = document.getElementById("loginEmail").value;
                 const password = document.getElementById("loginPassword").value;
 
@@ -77,16 +76,20 @@
                 .then(res => res.json())
                 .then(res => {
                     if (res.status === "success") {
+                        // store user object in localStorage
+                        localStorage.setItem("userData", JSON.stringify(res.user));
+                        localStorage.setItem("userRole", res.role);
+
                         showToast(res.message, "success");
 
                         setTimeout(() => {
+                            // redirect based on role
                             if (res.role === "admin") {
                                 window.location.href = "admin-dashboard.html";
                             } else {
                                 window.location.href = "user-dashboard.html";
                             }
                         }, 1500);
-
                     } else {
                         showToast(res.message);
                     }
