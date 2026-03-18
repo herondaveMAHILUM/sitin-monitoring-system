@@ -10,7 +10,7 @@
     <nav class="navbar shadow-lg fixed-top bg-white">
         <div class="container-fluid">
             <a class="navbar-brand text-primary" href="#">
-            <img src="assets/uclogo.png" alt="Logo" width="49" height="31" class="d-inline-block align-text-top">
+            <img src="assests/uclogo.png" alt="Logo" width="49" height="31" class="d-inline-block align-text-top">
             College of Computer Studies Sit-in Monitoring System
             </a>
             <div class="role-logged-out" id="nav-links">
@@ -34,54 +34,52 @@
 
     <div class="container p-5 rounded-4 shadow-lg border col-12 col-md-6 col-lg-4 bg-white">
         <h3 class="mb-4">Register</h3>
-        <label for="formGroupExampleInput" class="form-label">ID Number</label>
+        <label for="idNumber" class="form-label">ID Number</label>
         <input type="number" class="form-control mb-4" id="idNumber">
-        <label for="formGroupExampleInput" class="form-label">Last Name</label>
+        <label for="lastName" class="form-label">Last Name</label>
         <input type="text" class="form-control mb-4" id="lastName">
-        <label for="formGroupExampleInput" class="form-label">First Name</label>
+        <label for="firstName" class="form-label">First Name</label>
         <input type="text" class="form-control mb-4" id="firstName">   
-        <label for="formGroupExampleInput" class="form-label">Middle Name</label>
+        <label for="middleName" class="form-label">Middle Name</label>
         <input type="text" class="form-control mb-4" id="middleName">
-        <label for="formGroupExampleInput2" class="form-label">Course Level</label>
+        <label for="courseLevel" class="form-label">Course Level</label>
         <select class="form-control mb-4" id="courseLevel">
             <option value="">Select Course Level</option>
-            <option value="BSIT">1</option>
-            <option value="BSCS">2</option>
-            <option value="BSIT">3</option>
-            <option value="BSCS">4</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
         </select>
-        <label for="formGroupExampleInput2" class="form-label">Password</label>
+        <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control mb-4" id="password">
-        <label for="formGroupExampleInput2" class="form-label">Confirm Password</label>
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
         <input type="password" class="form-control mb-4" id="confirmPassword">
-        <label for="formGroupExampleInput2" class="form-label">Email</label>
+        <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control mb-4" id="email">
-        <label for="formGroupExampleInput2" class="form-label">Course</label>
+        <label for="course" class="form-label">Course</label>
         <select class="form-control mb-4" id="course">
             <option value="">Select Course</option>
-            <option value="BSIT">BSA</option>
-            <option value="BSCS">BSBA</option>
+            <option value="BSA">BSA</option>
+            <option value="BSBA">BSBA</option>
             <option value="BSIT">BSIT</option>
             <option value="BSCS">BSCS</option>
-            <option value="BSIT">BSCpE</option>
-            <option value="BSCS">BS Crim</option>
-            <option value="BSIT">BSCE</option>
-            <option value="BSCS">BSEE</option>
-            <option value="BSIT">BSME</option>
-            <option value="BSCS">BSIE</option>
-            <option value="BSIT">BSIT</option>
-            <option value="BSCS">BSC</option>
-            <option value="BSCS">BSHRM</option>
-            <option value="BSIT">BSTM</option>
-            <option value="BSCS">BSEEd</option>
-            <option value="BSIT">BSSecEd</option>
-            <option value="BSCS">BSCA</option>
-            <option value="BSIT">BSIT</option>
-            <option value="BSCS">BSIP</option>
-            <option value="BSCS">BSREM</option>
-            <option value="BSIT">BSOA</option>
+            <option value="BSCpE">BSCpE</option>
+            <option value="BS Crim">BS Crim</option>
+            <option value="BSCE">BSCE</option>
+            <option value="BSEE">BSEE</option>
+            <option value="BSME">BSME</option>
+            <option value="BSIE">BSIE</option>
+            <option value="BSC">BSC</option>
+            <option value="BSHRM">BSHRM</option>
+            <option value="BSTM">BSTM</option>
+            <option value="BSEEd">BSEEd</option>
+            <option value="BSSecEd">BSSecEd</option>
+            <option value="BSCA">BSCA</option>
+            <option value="BSIP">BSIP</option>
+            <option value="BSREM">BSREM</option>
+            <option value="BSOA">BSOA</option>
         </select>
-        <label for="formGroupExampleInput2" class="form-label">Address</label>
+        <label for="address" class="form-label">Address</label>
         <input type="text" class="form-control mb-4" id="address">
         <button id="registerBtn" class="btn btn-success">Sign Up</button>
         <button type="button" class="btn btn-secondary btn" onclick="window.location.href='index.html'">Cancel</button>
@@ -98,7 +96,6 @@
     </div>
     </div>
 
-    <!----------------------- Java Script Link  ---------------------------->
     <script src="script.js"></script>
 </body>
 </html>
